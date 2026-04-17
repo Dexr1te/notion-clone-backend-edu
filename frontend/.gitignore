@@ -1,13 +1,10 @@
+# Dependencies
 node_modules/
 
 # Build output
 dist/
 build/
 *.tsbuildinfo
-
-# Prisma generated client
-generated/
-src/generated/
 
 # Environment files
 .env
@@ -22,7 +19,7 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# Test / coverage
+# Coverage
 coverage/
 .nyc_output/
 

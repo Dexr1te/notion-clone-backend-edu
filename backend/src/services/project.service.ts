@@ -1,18 +1,18 @@
-export const getAllProjects = () => {
-  return [
-    {
-      id: 1,
-      title: 'Project 1',
-      description: 'Description of project 1'
-    },
-    {
-      id: 2,
-      title: 'Project 2',
-      description: 'Description of project 2'
-    }
-  ]
+import { CreateProjectSchema } from '@/schemas/project.schema'
+import { prisma } from '../lib/prisma'
+
+export const getAllProjects = async () => {
+  return await prisma.project.findMany()
 }
 
-export const createProject = (project: any) => {
-  return { project }
+export const createProject = async (
+  data: CreateProjectSchema,
+  ownerId: number
+) => {
+  return await prisma.project.create({
+    data: {
+      name: data.name,
+      ownerId
+    }
+  })
 }

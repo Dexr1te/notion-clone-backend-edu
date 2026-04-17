@@ -1,0 +1,18 @@
+export const getAllProjects = () => {
+  return [
+    {
+      id: 1,
+      title: 'Project 1',
+      description: 'Description of project 1'
+    },
+    {
+      id: 2,
+      title: 'Project 2',
+      description: 'Description of project 2'
+    }
+  ]
+}
+
+export const createProject = (project: any) => {
+  return { project }
+}

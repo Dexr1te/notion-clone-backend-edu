@@ -1,6 +1,7 @@
 import express from 'express'
 import projectRoutes from './routes/project.route'
 import userRoutes from './routes/user.route'
+import taskRoutes from './routes/task.route'
 import dotenv from 'dotenv'
 
 dotenv.config()
@@ -12,7 +13,7 @@ async function main() {
 
   app.use('/api/projects', projectRoutes)
   app.use('/api/users', userRoutes)
-  app.use('/api/task', () => {})
+  app.use('/api/task', taskRoutes)
 
   app.use((req, res) => {
     res.status(404).json({ message: 'Not found' })

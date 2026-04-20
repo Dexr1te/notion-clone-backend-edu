@@ -17,5 +17,5 @@ export const createTaskFunction = async (req: Request, res: Response) => {
   }
 
   const newProject = await createTask(validation.data)
-  res.json(newProject).status(201)
+  res.json(newProject).status(200)
 }
